@@ -1,0 +1,30 @@
+type:Loan {
+  id: Integer,
+  funded_amount: Decimal(8, 2),
+  outstanding_balance: Decimal(8, 2)
+}
+
+type:LoanPayment {
+  id: Integer,
+  loan_id: Integer,
+  amount: Decimal(8, 2),
+  created_at: DateTime
+}
+
+GET /api/loans
+RESPONSE: [type:Loan]
+
+GET /api/loans/:id
+RESPONSE: type:Loan
+
+GET /api/loans/:loan_id/loan_payments
+RESPONSE: [type:LoanPayment]
+
+GET /api/loans/:loan_id/loan_payments/:id
+RESPONSE: [type:LoanPayment]
+
+POST /api/loans/:loan_id/loan_payments
+PARAMS {
+  amount: Decimal(8, 2)
+}
+RESPONSE: type:LoanPayment

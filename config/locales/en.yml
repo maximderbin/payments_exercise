@@ -20,4 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    errors:
+      models:
+        loan_payment:
+          attributes:
+            amount:
+              loan_outstanding_balance_exceeds: Loan outstanding balance exceeds
